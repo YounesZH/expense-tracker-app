@@ -17,6 +17,7 @@ const Input = (props: InputProps) => {
         style={[styles.input,props.inputStyle]}
         placeholder={colors.neutral400}
         ref= {props.inputRef && props.inputRef}
+        {...props}
       />
     </View>
   );
@@ -26,11 +27,11 @@ export default Input;
 const styles = StyleSheet.create({
     container:{
         flexDirection: "row",
-        height: verticalScale(64),
+        height: verticalScale(54),
         alignItems: "center",
         justifyContent: "center",
-        backgroundColor: colors.neutral300,
         borderWidth: 1,
+        borderColor: colors.neutral300,
         borderRadius: radius._17,
         borderCurve: "continuous",
         paddingHorizontal: spacingX._15,
