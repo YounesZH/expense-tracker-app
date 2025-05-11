@@ -28,11 +28,22 @@ const register = () => {
 
         setIsLoading(true);
         const response = await registerUser(
-            emailRef.current, 
-            passwordRef.current, 
-            nameRef.current
-        );
-    }
+            emailRef.current,
+            passwordRef.current,
+            nameRef.current,
+            );
+       
+        setIsLoading(false);
+        console.log("register result", response);
+        if(!response.success){
+            Alert.alert("Sign Up", response.msg);
+        }
+
+        // console.log("email: ", emailRef.current);
+        // console.log("name: ", nameRef.current);
+        // console.log("password: ", passwordRef.current);
+        // console.log("Logging in...");
+    };
 
   return (
     <ScreenWrapper>
@@ -109,7 +120,7 @@ const register = () => {
         </View>
     </ScreenWrapper>
   )
-    };
+};
 
 export default register;
 const styles = StyleSheet.create({
